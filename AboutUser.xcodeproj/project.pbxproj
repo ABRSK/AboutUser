@@ -16,7 +16,7 @@
 		13B6513C27F2F054009F1C98 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6513B27F2F054009F1C98 /* WelcomeViewController.swift */; };
 		13B6513E27F2F06C009F1C98 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6513D27F2F06C009F1C98 /* AboutViewController.swift */; };
 		13B6514027F2F087009F1C98 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6513F27F2F087009F1C98 /* ContactViewController.swift */; };
-		13B6514227F2F1E9009F1C98 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6514127F2F1E9009F1C98 /* Models.swift */; };
+		13B6514227F2F1E9009F1C98 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B6514127F2F1E9009F1C98 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		13B6513B27F2F054009F1C98 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = AboutUser/WelcomeViewController.swift; sourceTree = SOURCE_ROOT; };
 		13B6513D27F2F06C009F1C98 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		13B6513F27F2F087009F1C98 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
-		13B6514127F2F1E9009F1C98 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		13B6514127F2F1E9009F1C98 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +114,7 @@
 		13B6514327F2F1F7009F1C98 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				13B6514127F2F1E9009F1C98 /* Models.swift */,
+				13B6514127F2F1E9009F1C98 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -196,7 +196,7 @@
 				13B6513E27F2F06C009F1C98 /* AboutViewController.swift in Sources */,
 				13B6512627F2EDF1009F1C98 /* SceneDelegate.swift in Sources */,
 				13B6514027F2F087009F1C98 /* ContactViewController.swift in Sources */,
-				13B6514227F2F1E9009F1C98 /* Models.swift in Sources */,
+				13B6514227F2F1E9009F1C98 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
