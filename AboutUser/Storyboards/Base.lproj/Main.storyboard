@@ -69,7 +69,7 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="a6N-f6-qnI" kind="presentation" modalPresentationStyle="fullScreen" id="Qzm-DS-3BF"/>
+                                                    <segue destination="2hs-Pz-cAW" kind="show" id="ePD-Uk-krI"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8v-3Y-9jI">
@@ -106,14 +106,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="115"/>
+            <point key="canvasLocation" x="2730" y="115"/>
         </scene>
-        <!--Welcome View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="aov-Rh-MMX">
+            <objects>
+                <tabBarController modalPresentationStyle="fullScreen" id="2hs-Pz-cAW" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Kgr-hm-rkg"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oxs-ej-xFD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="a6N-f6-qnI" kind="relationship" relationship="viewControllers" id="p2V-an-FDO"/>
+                        <segue destination="ygy-kl-2AD" kind="relationship" relationship="viewControllers" id="n6o-aD-Pjk"/>
+                        <segue destination="1zb-uP-1qG" kind="relationship" relationship="viewControllers" id="UaN-Ip-0Ep"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sjM-qr-KlG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2729" y="812"/>
+        </scene>
+        <!--Welcome-->
         <scene sceneID="cXk-Wu-VtZ">
             <objects>
-                <viewController storyboardIdentifier="WelcomeVC" id="a6N-f6-qnI" customClass="WelcomeViewController" customModule="AboutUser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeVC" modalPresentationStyle="fullScreen" id="a6N-f6-qnI" customClass="WelcomeViewController" customModule="AboutUser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ron-8f-Y0Y">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="dzw-51-tYp">
@@ -183,17 +202,18 @@
                             <constraint firstItem="dzw-51-tYp" firstAttribute="top" secondItem="fiz-1i-F9E" secondAttribute="top" constant="40" id="qRP-cr-ciL"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Welcome" image="number.circle" catalog="system" id="jCM-sw-4tQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtq-bw-ua3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="115"/>
+            <point key="canvasLocation" x="3554" y="115"/>
         </scene>
-        <!--About View Controller-->
+        <!--About-->
         <scene sceneID="L4O-C5-SQl">
             <objects>
-                <viewController storyboardIdentifier="AboutVC" id="ygy-kl-2AD" customClass="AboutViewController" customModule="AboutUser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutVC" modalPresentationStyle="fullScreen" id="ygy-kl-2AD" customClass="AboutViewController" customModule="AboutUser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qmk-Xz-cd0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="fIr-hC-zsb">
@@ -274,17 +294,18 @@
                             <constraint firstItem="fIr-hC-zsb" firstAttribute="top" secondItem="UdG-Yg-bOL" secondAttribute="top" constant="40" id="cEC-C9-0BL"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="About" image="number.circle" catalog="system" id="KpA-bd-jyY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okB-83-SLS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1556" y="115"/>
+            <point key="canvasLocation" x="3553" y="812"/>
         </scene>
-        <!--Contact View Controller-->
+        <!--Contact-->
         <scene sceneID="9c5-P6-edy">
             <objects>
-                <viewController storyboardIdentifier="ContactVC" id="1zb-uP-1qG" customClass="ContactViewController" customModule="AboutUser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactVC" modalPresentationStyle="fullScreen" id="1zb-uP-1qG" customClass="ContactViewController" customModule="AboutUser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sb3-9k-rJF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="CxG-Th-d71">
@@ -353,13 +374,15 @@
                             <constraint firstItem="CxG-Th-d71" firstAttribute="top" secondItem="7t5-gh-Nky" secondAttribute="top" constant="40" id="sZb-xI-j1y"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Contact" image="number.circle" catalog="system" id="7S2-vS-3Io"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LhM-HU-7NB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2260" y="115"/>
+            <point key="canvasLocation" x="3553" y="1510"/>
         </scene>
     </scenes>
     <resources>
+        <image name="number.circle" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
