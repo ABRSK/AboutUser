@@ -31,6 +31,8 @@ struct UserContacts {
   let email: String
 }
 
+// Default user
+
 var defaultUser = User(
   username: "username",
   password: "password",
@@ -42,7 +44,7 @@ var defaultUser = User(
       dateOfBirth: "March 5th, 1990",
       aboutText: "About text goes here...",
       favoriteAnimal: "Cats",
-      favoriteBook: "The Master and His Emissary by Iain McGilchrist"),
+      favoriteBook: "The Master and His Emissary"),
     contacts: UserContacts(
       phoneNumber: "+7 994 417 XX XX",
       email: "xxxxxxxx@gmail.com"
