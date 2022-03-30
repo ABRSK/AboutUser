@@ -8,14 +8,14 @@
 struct User {
   let username: String
   let password: String
-  var userProfile: UserProfile
+  let userProfile: UserProfile
 }
 
 struct UserProfile {
   let firstName: String
   let lastName: String
-  var displayName: String
-  var about: UserAbout
+  let displayName: String
+  let about: UserAbout
   let contacts: UserContacts
 }
 
@@ -33,7 +33,7 @@ struct UserContacts {
 
 // Default user
 
-var defaultUser = User(
+let defaultUser = User(
   username: "username",
   password: "password",
   userProfile: UserProfile(
