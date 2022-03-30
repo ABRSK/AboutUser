@@ -31,9 +31,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   // Переделать сброс ввода правильно
   
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-    super .touchesBegan(touches, with: event)
-      usernameField.resignFirstResponder()
-      passwordField.resignFirstResponder()
+    super.touchesBegan(touches, with: event)
+    view.endEditing(true)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
