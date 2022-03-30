@@ -42,8 +42,8 @@ var defaultUser = User(
     displayName: "ABRSK",
     about: UserAbout(
       dateOfBirth: "March 5th, 1990",
-      aboutText: "About text goes here...",
-      favoriteAnimal: "Cats",
+      aboutText: "Nulla facilisi. Quisque tempor odio vel feugiat semper. Phasellus purus justo, sagittis at pellentesque at, lobortis faucibus enim. Quisque dignissim cursus magna, vestibulum congue turpis laoreet quis. ",
+      favoriteAnimal: "Cat",
       favoriteBook: "The Master and His Emissary"),
     contacts: UserContacts(
       phoneNumber: "+7 994 417 XX XX",

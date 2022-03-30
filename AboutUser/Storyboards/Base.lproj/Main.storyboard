@@ -48,12 +48,18 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your username..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ery-dH-Kw5">
                                                 <rect key="frame" x="0.0" y="0.0" width="263" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="OCF-Jk-GSw"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o1C-Qf-qYM">
                                                 <rect key="frame" x="0.0" y="42" width="263" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gkF-pd-vkZ"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -69,7 +75,8 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="2hs-Pz-cAW" kind="show" id="ePD-Uk-krI"/>
+                                                    <action selector="logInButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="pLe-9L-Sp4"/>
+                                                    <segue destination="2hs-Pz-cAW" kind="show" identifier="TabBarController" id="ePD-Uk-krI"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t8v-3Y-9jI">
@@ -78,6 +85,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Need a hint?">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="needAHintButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="h7V-8d-lgJ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IN5-I6-Svp">
                                                 <rect key="frame" x="0.0" y="98.5" width="125" height="28.5"/>
@@ -85,6 +95,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="Forgot password?">
                                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="forgotPasswordButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="LnW-pV-DJK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -103,6 +116,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1aE-eO-pmR" secondAttribute="trailing" constant="16" id="jEn-SZ-B2g"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logInButton" destination="ipG-2G-sI2" id="Jcn-Rk-qGu"/>
+                        <outlet property="passwordTextField" destination="o1C-Qf-qYM" id="Srm-E9-bXr"/>
+                        <outlet property="usernameTextField" destination="Ery-dH-Kw5" id="H2K-mo-cZu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,7 +129,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="aov-Rh-MMX">
             <objects>
-                <tabBarController modalPresentationStyle="fullScreen" id="2hs-Pz-cAW" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2hs-Pz-cAW" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Kgr-hm-rkg"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oxs-ej-xFD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -130,7 +148,7 @@
         <!--Welcome-->
         <scene sceneID="cXk-Wu-VtZ">
             <objects>
-                <viewController storyboardIdentifier="WelcomeVC" modalPresentationStyle="fullScreen" id="a6N-f6-qnI" customClass="WelcomeViewController" customModule="AboutUser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="a6N-f6-qnI" customClass="WelcomeViewController" customModule="AboutUser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ron-8f-Y0Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,13 +182,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Ly2-9E-ANZ">
                                         <rect key="frame" x="40" y="210.5" width="263" height="55"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some basic introductory text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Fo-SR-QBU">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some basic introductory text" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Fo-SR-QBU">
                                                 <rect key="frame" x="0.0" y="0.0" width="263" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some basic introductory text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nf6-aE-Ri2">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some basic introductory text" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nf6-aE-Ri2">
                                                 <rect key="frame" x="0.0" y="35.5" width="263" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
@@ -186,6 +204,9 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="kCF-mH-weW" kind="unwind" unwindAction="unwindFor:" id="FNF-oL-6K9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -203,15 +224,22 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Welcome" image="number.circle" catalog="system" id="jCM-sw-4tQ"/>
+                    <connections>
+                        <outlet property="bottomWelcomeLabel" destination="nf6-aE-Ri2" id="6Dg-m5-YSG"/>
+                        <outlet property="displayNameLabel" destination="LOf-jk-X1r" id="FcI-JB-f4T"/>
+                        <outlet property="logOutButton" destination="RAd-ML-wQS" id="RiN-kA-dH0"/>
+                        <outlet property="topWelcomeLabel" destination="3Fo-SR-QBU" id="9nR-yB-1S0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtq-bw-ua3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="kCF-mH-weW" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3554" y="115"/>
         </scene>
         <!--About-->
         <scene sceneID="L4O-C5-SQl">
             <objects>
-                <viewController storyboardIdentifier="AboutVC" modalPresentationStyle="fullScreen" id="ygy-kl-2AD" customClass="AboutViewController" customModule="AboutUser" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ygy-kl-2AD" customClass="AboutViewController" customModule="AboutUser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qmk-Xz-cd0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -242,7 +270,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="firstName lastName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2a9-OI-Wyy">
                                                 <rect key="frame" x="0.0" y="158.5" width="343" height="19.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -251,25 +279,25 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vCh-05-A8c">
                                         <rect key="frame" x="40" y="238" width="263" height="126"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Born on: dateOfBirth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxA-Cd-GGO">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Born on: dateOfBirth" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oxA-Cd-GGO">
                                                 <rect key="frame" x="0.0" y="0.0" width="149.5" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About user text here..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scK-OC-Aoe">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About user text here..." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scK-OC-Aoe">
                                                 <rect key="frame" x="0.0" y="35.5" width="161" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite animal: favoriteAnimal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLE-1A-Hrn">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite animal: favoriteAnimal" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLE-1A-Hrn">
                                                 <rect key="frame" x="0.0" y="71" width="220.5" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite book: favoriteBook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9i-za-0s5">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorite book: favoriteBook" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9i-za-0s5">
                                                 <rect key="frame" x="0.0" y="106.5" width="197.5" height="19.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
@@ -295,6 +323,14 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="About" image="number.circle" catalog="system" id="KpA-bd-jyY"/>
+                    <connections>
+                        <outlet property="aboutUserLabel" destination="scK-OC-Aoe" id="xmN-XQ-sKO"/>
+                        <outlet property="dateOfBirthLabel" destination="oxA-Cd-GGO" id="0Jq-Ef-KDf"/>
+                        <outlet property="displayNameLabel" destination="63K-lN-BzW" id="wJJ-l2-1Me"/>
+                        <outlet property="favoriteAnimalLabel" destination="eLE-1A-Hrn" id="UwA-xX-hhV"/>
+                        <outlet property="favoriteBookLabel" destination="Q9i-za-0s5" id="xg1-Ga-mLM"/>
+                        <outlet property="firstAndLastNameLabel" destination="2a9-OI-Wyy" id="G9i-z9-0hw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okB-83-SLS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -334,7 +370,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="firstName lastName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t0g-zY-VBq">
                                                 <rect key="frame" x="0.0" y="158.5" width="343" height="19.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -375,6 +411,12 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Contact" image="number.circle" catalog="system" id="7S2-vS-3Io"/>
+                    <connections>
+                        <outlet property="displayNameLabel" destination="MmJ-A5-d5l" id="5x9-bx-6Rv"/>
+                        <outlet property="emailLabel" destination="HVr-c4-SJa" id="Yat-XQ-xBA"/>
+                        <outlet property="firstAndLastNameLabel" destination="t0g-zY-VBq" id="1Ke-Zh-mNk"/>
+                        <outlet property="phoneNumberLabel" destination="qPQ-6Y-7Li" id="fJb-uf-eiv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LhM-HU-7NB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
