@@ -51,7 +51,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
   }
   
-  // При нажатии проверить данные пользователя. При совпадении пропустить дальше.
   @IBAction func logInButtonPressed() {
     if usernameTextField.text != "username" || passwordTextField.text != "password" {
       showLoginFailedAlert()
