@@ -13,8 +13,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
   @IBOutlet var passwordTextField: UITextField!
   @IBOutlet var logInButton: UIButton!
   
-  private let username = defaultUser.username
-  private let password = defaultUser.password
+  private let username = User.defaultUser.username
+  private let password = User.defaultUser.password
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -36,18 +36,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     for viewController in viewControllers {
       if let welcomeVC = viewController as? WelcomeViewController {
-        welcomeVC.currentUser = defaultUser
+        welcomeVC.currentUser = User.defaultUser
       } else if let aboutVC = viewController as? AboutViewController {
-        aboutVC.currentUser = defaultUser
+        aboutVC.currentUser = User.defaultUser
       } else if let contactVC = viewController as? ContactViewController {
-        contactVC.currentUser = defaultUser
+        contactVC.currentUser = User.defaultUser
       }
     }
     
   }
   
   @IBAction func logInButtonPressed() {
-    if usernameTextField.text != "username" || passwordTextField.text != "password" {
+    if usernameTextField.text != username || passwordTextField.text != password {
       showLoginFailedAlert()
     }
   }
